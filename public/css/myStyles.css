@@ -1,0 +1,48 @@
+html {
+	position: relative;
+	min-height: 100%;
+}
+
+body {
+	margin-bottom: 60px; 
+	background-color: #EEEEEE;
+}
+
+.container-fluid {
+	margin: 0;
+	padding: 0;
+}
+
+.navbar {
+	margin-bottom: 0px;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  background-color: #222222;
+  color: white;
+}
+
+.welcome-nav, .welcome-nav:visited {
+    cursor: pointer;
+    color: gray;
+    text-decoration: none;
+}
+
+.welcome-nav:focus {
+	color: gray;
+	text-decoration: none;
+	outline: none;
+}
+
+.welcome-nav:hover {
+     text-decoration:none;
+     text-shadow: 1px 1px 1px #555;
+}
+
+.btn-delete {
+  display: none;
+}
