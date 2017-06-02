@@ -81,8 +81,13 @@ class PagesController extends Controller
 
 	public function saveAudio() {
 
-	    $blob = $_POST['blob'];
-
-	    file_put_contents('audio/sound.wav', $blob);
+	    if(isset($_FILES['file']) and !$_FILES['file']['error']) {
+            $fname = "sound1" . ".wav";
+            move_uploaded_file($_FILES['file']['tmp_name'], 'audio/' . $fname);
+        }
+//
+//	    $blob = $_POST['blob'];
+//
+//	    file_put_contents('audio/sound.wav', base64_decode($blob));
     }
 }

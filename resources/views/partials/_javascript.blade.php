@@ -1,4 +1,4 @@
-<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 <script src="/js/lightbox.js"></script>
 <script src="/js/FileSaver.js"></script>
 <script src="/js/myJavascript.js"></script>

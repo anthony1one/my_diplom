@@ -33,6 +33,7 @@ var recIndex = 0;
 
 function saveAudio() {
     audioRecorder.exportWAV( doneEncoding );
+    
     // could get mono instead by saying
     // audioRecorder.exportMonoWAV( doneEncoding );
 }
@@ -49,25 +50,38 @@ function gotBuffers( buffers ) {
 
 function doneEncoding( blob ) {
 
-    var reader = new FileReader();
-    var blobData = ''
+    var url = (window.URL || window.webkitURL).createObjectURL(blob);
+    console.log(url);
 
-    reader.addEventListener("loadend", function() {
-        // reader.result contains the contents of blob as a typed array
-        blobData = reader.result;
+    var data = new FormData();
+    data.append('file', blob);
 
-        $.ajax({
-            type: "POST",
-            url: 'http://localhost:8000/saveaudio',
-            data: { blob: blobData},
-            dataType: 'text',
-            success: alert(1),
-            error: alert(2)
-        });
+    $.ajax({
+        url: 'http://localhost:8000/saveaudio',
+        type: 'POST',
+        data: data,
+        contentType: false,
+        processData: false,
     });
-    reader.readAsBinaryString(blob);
 
-    blobData = reader.result;
+    //
+    // var reader = new FileReader();
+    // var blobData = ''
+    //
+    // reader.addEventListener("loadend", function() {
+    //     // reader.result contains the contents of blob as a typed array
+    //     blobData = reader.result;
+    //
+    //     $.ajax({
+    //         type: "POST",
+    //         url: 'http://localhost:8000/saveaudio',
+    //         data: { blob: blobData},
+    //         success: alert(1),
+    //         error: alert(2)
+    //     });
+    // });
+    // reader.readAsBinaryString(blob);
+
 
     // Recorder.setupDownload( blob, "myRecording" + ((recIndex<10)?"0":"") + recIndex + ".wav" );
 
