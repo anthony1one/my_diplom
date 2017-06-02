@@ -99,7 +99,7 @@ class AlbumsCategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-         $album = AlbumsCategory::find($id);
+        $album = AlbumsCategory::find($id);
         if ($album->slug != Session::get('current_slug')) {
             $this->validate($request, [
                 'slug' => 'required|alpha_dash|min:5|max:255'
@@ -134,6 +134,21 @@ class AlbumsCategoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $album = AlbumsCategory::find($id);
+
+        unlink(public_path($album->src_img));
+        $album->delete();
+
+        return redirect()->route('albums.index');
+    }
+
+    public function deleteAlbum($id)
+    {
+        $album = AlbumsCategory::find($id);
+
+        unlink(public_path($album->src_img));
+        $album->delete();
+        
+        return redirect()->route('albums.index');
     }
 }

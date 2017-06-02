@@ -24,6 +24,7 @@
                     	<a href="{{ route('albums_category.show', $album->slug) }}">
                     		<img src="{{ URL::asset($album['src_img']) }}" height="100%" width="100%">
                     	</a>
+                    	<a href="{{ route('albums.deleteAlbum', $album->id) }}" class="btn btn-danger btn-delete">Удалить</a>
                     </div>
                     <div class="panel-footer text-center">
                         {{ $album->name }}

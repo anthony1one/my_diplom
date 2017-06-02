@@ -53,9 +53,9 @@
             <a href="{{ route('portfolio') }}" class="welcome-nav"><small>Портфолио</small></a> |
     		<a href="{{ route('about') }}" class="welcome-nav"><small>Обо мне</small></a> |
             <a href="{{ route('albums') }}" class="welcome-nav"><small>Альбом</small></a> |
-            <a href="{{ route('shop') }}" class="welcome-nav"><small>Магазин</small></a> |
+            {{-- <a href="{{ route('shop') }}" class="welcome-nav"><small>Магазин</small></a> | --}}
             <a href="{{ route('contacts') }}" class="welcome-nav"><small>Контакты</small></a> 
 		</div>
-        <a href="#" class="btn btn-primary btn-lg">Написать мне</a>
+        <a href="{{ route('contacts') }}" class="btn btn-primary btn-lg">Написать мне</a>
 	</div>
 @endsection

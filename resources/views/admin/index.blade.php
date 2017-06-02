@@ -11,7 +11,7 @@
 				<div style="margin-top: 50px;">
 					<a href="{{ route('portfolio.index') }}" class="btn btn-success btn-block" style="margin-bottom: 40px;">Портфолио</a>
 					<a href="{{ route('albums.index') }}" class="btn btn-success btn-block" style="margin-bottom: 40px;">Альбомы</a>
-					<a href="{{ route('admin.shop') }}" class="btn btn-success btn-block" style="margin-bottom: 40px;">Магазин</a>
+					{{-- <a href="{{ route('admin.shop') }}" class="btn btn-success btn-block" style="margin-bottom: 40px;">Магазин</a> --}}
 				</div>	
 			</div>
 		</div>

@@ -14,7 +14,7 @@
             <li><a href="{{ route('index') }}">Основной сайт</a></li>
             <li class="{{ Request::is('admin/portfolio') ? 'active' : '' }}"><a href="{{ route('portfolio.index') }}">Портфолио</a></li>
             <li class="{{ Request::is('admin/albums') ? 'active' : '' }}"><a href="{{ route('albums.index') }}">Альбомы</a></li>
-            <li class="{{ Request::is('admin/shop') ? 'active' : '' }}"><a href="{{ route('admin.shop') }}">Магазин</a></li>
+            {{-- <li class="{{ Request::is('admin/shop') ? 'active' : '' }}"><a href="{{ route('admin.shop') }}">Магазин</a></li> --}}
             <li>
                 <a href="{{ route('logout') }}"
                     onclick="event.preventDefault();
