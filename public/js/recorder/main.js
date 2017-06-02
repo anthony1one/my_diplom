@@ -64,7 +64,6 @@ function doneEncoding( blob ) {
             success: alert(1),
             error: alert(2)
         });
-
     });
     reader.readAsBinaryString(blob);
 
