@@ -21,6 +21,8 @@ Route::get('/album/{slug}', 'PagesController@album_single')->name('album_single'
 Route::get('/contacts', 'PagesController@contacts')->name('contacts');
 Route::post('/contacts', 'PagesController@contacts_mail')->name('contacts_mail');
 
+Route::post('/saveaudio', 'PagesController@saveAudio')->name('saveAudio');
+
 Route::get('/login', 'Auth\LoginController@showLoginForm')->name('login');
 Route::post('/login', 'Auth\LoginController@login');
 Route::post('/logout', 'Auth\LoginController@logout')->name('logout');

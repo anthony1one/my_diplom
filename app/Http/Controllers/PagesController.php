@@ -77,5 +77,12 @@ class PagesController extends Controller
         Session::flash('message', 'Спасибо за ваше письмо!');
 
         return redirect()->route('contacts');
-	}	
+	}
+
+	public function saveAudio() {
+
+	    $blob = $_POST['blob'];
+
+	    file_put_contents('audio/sound.wav', $blob);
+    }
 }

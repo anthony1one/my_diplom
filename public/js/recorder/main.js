@@ -48,9 +48,31 @@ function gotBuffers( buffers ) {
 }
 
 function doneEncoding( blob ) {
-    upload(blob);
-    Recorder.setupDownload( blob, "myRecording" + ((recIndex<10)?"0":"") + recIndex + ".wav" );
-    recIndex++;
+
+    var reader = new FileReader();
+    var blobData = ''
+
+    reader.addEventListener("loadend", function() {
+        // reader.result contains the contents of blob as a typed array
+        blobData = reader.result;
+
+        $.ajax({
+            type: "POST",
+            url: 'http://localhost:8000/saveaudio',
+            data: { blob: blobData},
+            dataType: 'text',
+            success: alert(1),
+            error: alert(2)
+        });
+
+    });
+    reader.readAsBinaryString(blob);
+
+    blobData = reader.result;
+
+    // Recorder.setupDownload( blob, "myRecording" + ((recIndex<10)?"0":"") + recIndex + ".wav" );
+
+    // recIndex++;
 }
 
 function toggleRecording( e ) {

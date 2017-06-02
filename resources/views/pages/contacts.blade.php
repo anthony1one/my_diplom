@@ -3,6 +3,7 @@
 @section('title', 'Контакты')
 
 @section('content')
+    <meta name="_token" content="{{ csrf_token() }}"/>
 	<div class="row" style="margin: 0 30px 30px 30px;">
         <div class="col-md-4">
             <div>
